@@ -33,7 +33,7 @@ class ContextDecorator(object):
             if self.after is not None:
                 catch = self.after(*exc)
             if not catch and exc is not (None, None, None):
-                return False
+                raise exc
             return result
         return inner
 
